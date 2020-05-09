@@ -13,7 +13,8 @@ import com.wytiger.noaidl.IMyServer;
 import com.wytiger.noaidl.client.MyServerProxy;
 
 /**
- * desc: 抽象类，服务端本地对象，继承Binder代表拥有跨进程通信能力，实现IMyServer代表提供什么样的能力
+ * desc: 服务端本地对象，继承Binder代表拥有跨进程通信能力，实现IMyServer代表提供什么样的能力。
+ * 抽象类，对应aidl中Stub类。
  *
  * @author wuyong_cd
  */

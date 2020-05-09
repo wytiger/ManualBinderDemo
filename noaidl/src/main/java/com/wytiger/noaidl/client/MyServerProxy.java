@@ -8,7 +8,8 @@ import android.util.Log;
 import com.wytiger.noaidl.IMyServer;
 
 /**
- * desc: 服务端代理对象，实现服务端接口
+ * desc: 服务端代理对象，实现服务端接口。
+ * 对应aidl中Stub的内部类Proxy。
  *
  * @author wuyong_cd
  */
