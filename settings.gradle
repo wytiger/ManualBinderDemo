@@ -1,0 +1,2 @@
+rootProject.name='ManualBinderDemo'
+include ':app'
