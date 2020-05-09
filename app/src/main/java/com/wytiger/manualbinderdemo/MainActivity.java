@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.wytiger.noaidl.server.MyServer;
+import com.wytiger.noaidl.server.MyService;
 
 /**
  * 手写binder实现进程间通信
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void bindService() {
-        Intent intent = new Intent("com.wytiger.noaidl.ACTION_MY_SERVER");
+        Intent intent = new Intent(this, MyService.class);
         bindService(intent, new ServiceConnection() {
             @Override
             public void onServiceConnected(ComponentName name, IBinder service) {

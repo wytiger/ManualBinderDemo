@@ -6,7 +6,7 @@
             android:name=".server.MyService"
             android:enabled="true"
             android:exported="true"
-            android:process="MyService">
+            android:process="com.wytiger.noaidl.MyService">
             <intent-filter>
                 <action android:name="com.wytiger.noaidl.ACTION_MY_SERVER" />
             </intent-filter>
