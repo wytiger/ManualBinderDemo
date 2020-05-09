@@ -12,6 +12,7 @@ import android.os.RemoteException;
 import android.view.View;
 import android.widget.TextView;
 
+import com.wytiger.noaidl.IMyServer;
 import com.wytiger.noaidl.server.MyServer;
 import com.wytiger.noaidl.server.MyService;
 
@@ -19,7 +20,7 @@ import com.wytiger.noaidl.server.MyService;
  * 手写binder实现进程间通信
  */
 public class MainActivity extends AppCompatActivity {
-    MyServer myServer;
+    IMyServer myServer;
 
     TextView tv_call;
 
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         bindService(intent, new ServiceConnection() {
             @Override
             public void onServiceConnected(ComponentName name, IBinder service) {
-                myServer = (MyServer) MyServer.asInterface(service);
+                myServer = MyServer.asInterface(service);
             }
 
             @Override
