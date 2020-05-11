@@ -67,10 +67,11 @@ public abstract class MyServerNative extends Binder implements IMyServer {
                 int _arg0 = data.readInt();
                 int _arg1 = data.readInt();
                 //调用方法
-                this.add(_arg0, _arg1);
+                int _result = this.add(_arg0, _arg1);
 
                 //将结果写入响应参数
                 reply.writeNoException();// Parcel队头写入, “无异常“
+                reply.writeInt(_result);
                 return true;
             default:
                 return super.onTransact(code, data, reply, flags);

@@ -24,6 +24,7 @@ public class MyServerProxy implements IMyServer {
     public int add(int a, int b) throws RemoteException {
         Parcel _data = Parcel.obtain();
         Parcel _reply = Parcel.obtain();
+        int _result = 0;
 
         //请求参数写入数据
         _data.writeInterfaceToken(DESCRIPTOR);//服务接口标识
@@ -36,15 +37,22 @@ public class MyServerProxy implements IMyServer {
 
             //响应参数读取
             _reply.readException();//在Parcel队头读取，若读取值为异常，则抛出该异常；否则，程序正常运行。
-            return _reply.readInt();
+            _result = _reply.readInt();
+        } catch (Exception e) {
+            e.printStackTrace();
         } finally {
             _data.recycle();
             _reply.recycle();
         }
+        return _result;
     }
 
     @Override
     public IBinder asBinder() {
         return mRemote;
+    }
+
+    public String getInterfaceDescriptor() {
+        return DESCRIPTOR;
     }
 }
