@@ -20,9 +20,8 @@ import com.wytiger.noaidl.server.MyService;
  * 手写binder实现进程间通信
  */
 public class MainActivity extends AppCompatActivity {
-    IMyServer myServer;
-
     TextView tv_call;
+    IMyServer myServer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +29,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         bindService();
+        test();
+    }
 
+    private void test() {
         tv_call = findViewById(R.id.tv_call);
         tv_call.setOnClickListener(new View.OnClickListener() {
             @Override
